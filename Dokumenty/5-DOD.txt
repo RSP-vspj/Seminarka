@@ -1,0 +1,6 @@
+Definition of Done 
+
+* Akceptacní kritéria jsou splnena 
+* User Story byla otestována 
+* User Story byla zdokumentována v MS Teams - bud v uživatelské nebo administrátorské dokumentaci, dle smyslu (prípadne v obou) 
+* Product Owner potvrdil dokoncení User Story 

@@ -1,0 +1,8 @@
+Definition of Ready 
+
+* User Story je dostatecne malá, aby bylo možné ji v rámci sprintu splnit 
+* Tasks jsou jasne definované 
+* Hodinový odhad je definován 
+* V týmu existuje shoda, jak bude daná User Story/Task implementován 
+* Akceptacní kritéria obsahují jasne definované náležitosti 
+* Všechny User Stories jsou relativne stejne casové nárocné
