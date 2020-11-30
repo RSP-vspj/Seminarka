@@ -3,11 +3,61 @@
     <head>
         <meta charset="UTF-8" />
         <title>{% block title %}RSP Tarzani{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+        {% block stylesheets %}
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="{{ asset('/styles/main.css') }}" />
+        {% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
+    <div class="header">
+    <img src="/images/vspj-logo.svg">
+    <h2 style="color: black;">&emsp;Logos polytechnikos</h2>
+    </div>
+
+
+
+    <div class="horizontal">
+        <a href="{{ path('homepage') }}">Domovská stránka</a>
+        <a href="{{ path('onas') }}">O nás</a>
+        <a href="{{ path('kontakt') }}">Kontakt</a>
+        <div class="login-container">
+            <form action="" method="post">
+                <input type="text" placeholder="Uživ. jméno" name="username">
+                <input type="text" placeholder="Heslo" name="psw">
+                <button type="submit">Přihlášení</button>
+            </form>
+        </div>
+    </div>
+    <div class="vertical-menu">
+        <a href="{{ path('pokyny') }}">Pokyny pro přispěvatele</a>
+        <a href="{{ path('sablona') }}">Šablona</a>
+        <a href="{{ path('recenzni_rizeni') }}">Recenzní řízení</a>
+        <a href="#">Zadat článek</a>
+        <a href="#">Seznam článků</a>
+        <br><br>
+
+        <b>Adresa nakladatele:</b><br>
+        Vysoká škola polytechnická Jihlava<br>
+        redakce LOGOS POLYTECHNIKOS<br>
+        Tolstého 1556/16<br>
+        586 01 Jihlava<br><br>
+        IČ: 71226401<br>
+        DIČ: CZ71226401<br><br>
+        <b>Kontaktní osoba:</b><br>
+        Jana Janová<br>
+        e-mail: janova@jana.cz
+
+    </div>
         {% block body %}{% endblock %}
+
+    <div class="footer">
+        Team Tarzani @ Vysoká škola polytechnická Jihlava 2020
+
+    </div>
         {% block javascripts %}{% endblock %}
     </body>
 </html>
