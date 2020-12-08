@@ -1,0 +1,3 @@
+petkopara_crud_homepage:
+    path:     /
+    defaults: { _controller: CrudGeneratorBundle:Default:index }
