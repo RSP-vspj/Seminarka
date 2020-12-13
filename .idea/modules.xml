@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/rsp.iml" filepath="$PROJECT_DIR$/.idea/rsp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../tab/.idea/tab.iml" filepath="$PROJECT_DIR$/../tab/.idea/tab.iml" />
     </modules>
   </component>
 </project>

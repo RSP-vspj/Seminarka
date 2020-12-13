@@ -1,3 +1,7 @@
+{% if error %}
+    <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+{% endif %}
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -24,10 +28,11 @@
         <a href="{{ path('homepage') }}">Domovská stránka</a>
         <a href="{{ path('onas') }}">O nás</a>
         <a href="{{ path('kontakt') }}">Kontakt</a>
-        <div class="login-container">
-            <form action="" method="post">
-                <input type="text" placeholder="Uživ. jméno" name="username">
-                <input type="text" placeholder="Heslo" name="psw">
+        <div class="login-container" />
+            <form action="{{ path("homepage") }}" method="post" />
+                <input type="text" placeholder="Uživ. jméno" id="username" name="_username" value="{{ last_username }}" />
+                <input type="password" placeholder="Heslo" name="_password" />
+                <input type="hidden" name="_target_path" value="/uzivatel" />
                 <button type="submit">Přihlášení</button>
             </form>
         </div>
@@ -50,7 +55,6 @@
         <b>Kontaktní osoba:</b><br>
         Jana Janová<br>
         e-mail: janova@jana.cz
-
     </div>
         {% block body %}{% endblock %}
 

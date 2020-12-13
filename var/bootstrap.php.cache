@@ -381,13 +381,11 @@ use Symfony\Component\HttpFoundation\Exception\SuspiciousOperationException;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 class Request
 {
-const HEADER_FORWARDED = 0b00001;
-const HEADER_X_FORWARDED_FOR = 0b00010;
+const HEADER_FORWARDED = 0b00001; const HEADER_X_FORWARDED_FOR = 0b00010;
 const HEADER_X_FORWARDED_HOST = 0b00100;
 const HEADER_X_FORWARDED_PROTO = 0b01000;
 const HEADER_X_FORWARDED_PORT = 0b10000;
-const HEADER_X_FORWARDED_ALL = 0b11110;
-const HEADER_X_FORWARDED_AWS_ELB = 0b11010;
+const HEADER_X_FORWARDED_ALL = 0b11110; const HEADER_X_FORWARDED_AWS_ELB = 0b11010;
 const HEADER_CLIENT_IP = self::HEADER_X_FORWARDED_FOR;
 const HEADER_CLIENT_HOST = self::HEADER_X_FORWARDED_HOST;
 const HEADER_CLIENT_PROTO = self::HEADER_X_FORWARDED_PROTO;
@@ -1259,8 +1257,7 @@ $baseUrl = $this->server->get('SCRIPT_NAME');
 } elseif (basename($this->server->get('PHP_SELF')) === $filename) {
 $baseUrl = $this->server->get('PHP_SELF');
 } elseif (basename($this->server->get('ORIG_SCRIPT_NAME')) === $filename) {
-$baseUrl = $this->server->get('ORIG_SCRIPT_NAME');
-} else {
+$baseUrl = $this->server->get('ORIG_SCRIPT_NAME'); } else {
 $path = $this->server->get('PHP_SELF','');
 $file = $this->server->get('SCRIPT_FILENAME','');
 $segs = explode('/', trim($file,'/'));
@@ -1416,8 +1413,7 @@ private function normalizeAndFilterClientIps(array $clientIps, $ip)
 if (!$clientIps) {
 return [];
 }
-$clientIps[] = $ip;
-$firstTrustedIp = null;
+$clientIps[] = $ip; $firstTrustedIp = null;
 foreach ($clientIps as $key => $clientIp) {
 if (strpos($clientIp,'.')) {
 $i = strpos($clientIp,':');

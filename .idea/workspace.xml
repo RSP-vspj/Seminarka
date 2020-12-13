@@ -73,9 +73,14 @@
       <path value="$PROJECT_DIR$/vendor/sensio/framework-extra-bundle" />
       <path value="$PROJECT_DIR$/vendor/twig/twig" />
       <path value="$PROJECT_DIR$/vendor/fig/link-util" />
+      <path value="$PROJECT_DIR$/vendor/pagerfanta/pagerfanta" />
+      <path value="$PROJECT_DIR$/vendor/petkopara/multi-search-bundle" />
+      <path value="$PROJECT_DIR$/vendor/lexik/form-filter-bundle" />
+      <path value="$PROJECT_DIR$/vendor/petkopara/crud-generator-bundle" />
     </include_path>
   </component>
   <component name="ProjectId" id="1jmrfJUrCYwozFXKcQU3NksgUXs" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -83,8 +88,9 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../tab" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -101,6 +107,15 @@
       <workItem from="1606646395588" duration="1664000" />
       <workItem from="1606663934497" duration="1771000" />
       <workItem from="1606721628764" duration="605000" />
+      <workItem from="1607020079777" duration="14242000" />
+      <workItem from="1607182951424" duration="8360000" />
+      <workItem from="1607209005217" duration="6077000" />
+      <workItem from="1607289555548" duration="740000" />
+      <workItem from="1607291227582" duration="1060000" />
+      <workItem from="1607293129990" duration="5676000" />
+      <workItem from="1607355016816" duration="15929000" />
+      <workItem from="1607800991036" duration="377000" />
+      <workItem from="1607809102600" duration="4000" />
     </task>
     <servers />
   </component>
@@ -120,9 +135,25 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="740" y="274" key="FileChooserDialogImpl" timestamp="1607355449771">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="274" key="FileChooserDialogImpl/1920.60.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1607355449771" />
+    <state x="461" y="164" key="SettingsEditor" timestamp="1607207161107">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="461" y="164" key="SettingsEditor/1920.60.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1607207161107" />
+    <state x="2232" y="222" width="1307" height="643" key="dock-window-1" timestamp="1607362444163">
+      <screen x="1920" y="60" width="1920" height="1040" />
+    </state>
+    <state x="2232" y="222" width="1307" height="643" key="dock-window-1/1920.60.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1607362444163" />
     <state x="616" y="240" key="run.anything.popup" timestamp="1606642680949">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="616" y="240" key="run.anything.popup/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1606642680949" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1607026096623">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/1920.60.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1607026096623" />
   </component>
 </project>

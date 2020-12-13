@@ -41,6 +41,10 @@
       <path value="$PROJECT_DIR$/vendor/sensio/framework-extra-bundle" />
       <path value="$PROJECT_DIR$/vendor/twig/twig" />
       <path value="$PROJECT_DIR$/vendor/fig/link-util" />
+      <path value="$PROJECT_DIR$/vendor/pagerfanta/pagerfanta" />
+      <path value="$PROJECT_DIR$/vendor/petkopara/multi-search-bundle" />
+      <path value="$PROJECT_DIR$/vendor/lexik/form-filter-bundle" />
+      <path value="$PROJECT_DIR$/vendor/petkopara/crud-generator-bundle" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="5.5.0" />
