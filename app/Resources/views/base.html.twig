@@ -30,7 +30,7 @@
         <a href="{{ path('kontakt') }}">Kontakt</a>
         <div class="login-container" />
             <form action="{{ path("homepage") }}" method="post" />
-                <input type="text" placeholder="Uživ. jméno" id="username" name="_username" value="{{ last_username }}" />
+                <input type="text" placeholder="Uživ. jméno" id="username" name="_username" value="{% if last_username is defined %} {{ last_username }} {% endif %}" />
                 <input type="password" placeholder="Heslo" name="_password" />
                 <input type="hidden" name="_target_path" value="/uzivatel" />
                 <button type="submit">Přihlášení</button>
