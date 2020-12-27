@@ -126,8 +126,8 @@ class UzivatelController extends Controller
         $view = new TwitterBootstrap3View();
         $pagerHtml = $view->render($pagerfanta, $routeGenerator, array(
             'proximity' => 3,
-            'prev_message' => 'previous',
-            'next_message' => 'next',
+            'prev_message' => 'předchozí',
+            'next_message' => 'další',
         ));
 
         return array($entities, $pagerHtml);
@@ -149,7 +149,7 @@ class UzivatelController extends Controller
         if ($endRecord > $totalOfRecords) {
             $endRecord = $totalOfRecords;
         }
-        return "Showing $startRecord - $endRecord of $totalOfRecords Records.";
+        return "Zobrazuji $startRecord - $endRecord z $totalOfRecords záznamů.";
     }
 
 
@@ -178,7 +178,7 @@ class UzivatelController extends Controller
             $em->flush();
 
             $editLink = $this->generateUrl('uzivatel_edit', array('id' => $uzivatel->getId()));
-            $this->get('session')->getFlashBag()->add('success', "<a href='$editLink'>New uzivatel was created successfully.</a>" );
+            $this->get('session')->getFlashBag()->add('success', "<a href='$editLink'>Nový uživatel byl úspěšně vytvořen.</a>" );
 
             $nextAction=  $request->get('submit') == 'save' ? 'uzivatel' : 'uzivatel_new';
             return $this->redirectToRoute($nextAction);
@@ -230,7 +230,7 @@ class UzivatelController extends Controller
             $em->persist($uzivatel);
             $em->flush();
             
-            $this->get('session')->getFlashBag()->add('success', 'Edited Successfully!');
+            $this->get('session')->getFlashBag()->add('success', 'Úspěšně upraveno!');
             return $this->redirectToRoute('uzivatel_edit', array('id' => $uzivatel->getId()));
         }
         return $this->render('uzivatel/edit.html.twig', array(
@@ -258,9 +258,9 @@ class UzivatelController extends Controller
             $em = $this->getDoctrine()->getManager();
             $em->remove($uzivatel);
             $em->flush();
-            $this->get('session')->getFlashBag()->add('success', 'The Uzivatel was deleted successfully');
+            $this->get('session')->getFlashBag()->add('success', 'Uživatel byl úspěšně smazán.');
         } else {
-            $this->get('session')->getFlashBag()->add('error', 'Problem with deletion of the Uzivatel');
+            $this->get('session')->getFlashBag()->add('error', 'Nastal problém s mazáním uživatele.');
         }
         
         return $this->redirectToRoute('uzivatel');
@@ -294,9 +294,9 @@ class UzivatelController extends Controller
         try {
             $em->remove($uzivatel);
             $em->flush();
-            $this->get('session')->getFlashBag()->add('success', 'The Uzivatel was deleted successfully');
+            $this->get('session')->getFlashBag()->add('success', 'Uživatel byl úspěšně smazán.');
         } catch (Exception $ex) {
-            $this->get('session')->getFlashBag()->add('error', 'Problem with deletion of the Uzivatel');
+            $this->get('session')->getFlashBag()->add('error', 'Nastal problém s mazáním uživatele.');
         }
 
         return $this->redirect($this->generateUrl('uzivatel'));
@@ -325,10 +325,10 @@ class UzivatelController extends Controller
                     $em->flush();
                 }
 
-                $this->get('session')->getFlashBag()->add('success', 'uzivatels was deleted successfully!');
+                $this->get('session')->getFlashBag()->add('success', 'Uživatelé byli úspěšně smazáni.');
 
             } catch (Exception $ex) {
-                $this->get('session')->getFlashBag()->add('error', 'Problem with deletion of the uzivatels ');
+                $this->get('session')->getFlashBag()->add('error', 'Nastal problém s mazáním uživatelů.');
             }
         }
 

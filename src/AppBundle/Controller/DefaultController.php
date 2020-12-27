@@ -30,9 +30,11 @@ class DefaultController extends Controller
         $authenticationUtils = $this->get('security.authentication_utils');
         $error = $authenticationUtils->getLastAuthenticationError();
         $lastUsername = $authenticationUtils->getLastUsername();
+        if ($error != null) {
+            $this->get('session')->getFlashBag()->add('danger', 'Chybné přihlašovací jméno nebo heslo!');
+        }
         return $this->render('default/index.html.twig', array(
-            'last_username' => $lastUsername,
-            'error' => $error,
+            'last_username' => $lastUsername
         ));
     }
 
