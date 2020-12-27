@@ -308,6 +308,9 @@ class Uzivatel implements UserInterface, \Serializable
             ) = unserialize($serialized, ['allowed_classes' => false]);
     }
 
-
+    public function __toString()
+    {
+        return $this->login;
+    }
 }
 
