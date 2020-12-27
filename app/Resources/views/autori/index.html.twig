@@ -10,7 +10,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="page-header">
-                    <h2><a href="{{ path('autori') }}">Autori</a></h2>
+                    <h2><a href="{{ path('autori') }}">Autoři</a></h2>
                 </div>
             </div>
 
@@ -141,17 +141,17 @@
                             <th width="20px"><input type="checkbox" class="check-all" onclick="toggleAll(this)"></th>
 
                             {% import "PetkoparaCrudGeneratorBundle::macros/th_sortable.html.twig" as macros %}
-                            <th>{{ macros.th_sortable('id',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'autori') }}</th>
-                            <th>{{ macros.th_sortable('uzivatelID',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'autori') }}</th>
-                            <th>{{ macros.th_sortable('clanekID',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'autori') }}</th>
-                            <th>{{ macros.th_sortable('cisloRevize',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'autori') }}</th>
-                            <th>{{ macros.th_sortable('pripominkyAutoraKRevizi',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'autori') }}</th>
-                            <th>{{ macros.th_sortable('vyjadreniAutoraKVysledkuRecenznihoRizeni',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'autori') }}</th>
-                            <th>{{ macros.th_sortable('autorPrihlasenOdPridaniNejnovejsiRecenze',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'autori') }}</th>
-                            <th>{{ macros.th_sortable('autorSeznamenSVysledkyRecenznihoRizeni',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'autori') }}</th>
+                            <th>{{ macros.th_sortable('id',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'autori', 'id') }}</th>
+                            <th>{{ macros.th_sortable('uzivatelID',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'autori', 'uživatel ID') }}</th>
+                            <th>{{ macros.th_sortable('clanekID',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'autori', 'článek ID') }}</th>
+                            <th>{{ macros.th_sortable('cisloRevize',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'autori', 'číslo revize') }}</th>
+                            <th>{{ macros.th_sortable('pripominkyAutoraKRevizi',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'autori', 'připomínky autora k revizi') }}</th>
+                            <th>{{ macros.th_sortable('vyjadreniAutoraKVysledkuRecenznihoRizeni',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'autori', 'vyjádření autora k výsledku recenzního řízení ') }}</th>
+                            <th>{{ macros.th_sortable('autorPrihlasenOdPridaniNejnovejsiRecenze',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'autori', 'autor přihlášen od přidání nejnovější recenze') }}</th>
+                            <th>{{ macros.th_sortable('autorSeznamenSVysledkyRecenznihoRizeni',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'autori','autor seznámen s výsledky recenzního řízení') }}</th>
 
 
-                            <th width="130px">List</th>
+                            <th width="130px">Akce</th>
                         </tr>
                         </thead>
                         <tbody>
