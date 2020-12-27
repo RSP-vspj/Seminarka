@@ -10,7 +10,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="page-header">
-                    <h2><a href="{{ path('clanek') }}">Clanek</a></h2>
+                    <h2><a href="{{ path('clanek') }}">Článek</a></h2>
                 </div>
             </div>
 
@@ -198,36 +198,36 @@
                             <th width="20px"><input type="checkbox" class="check-all" onclick="toggleAll(this)"></th>
 
                             {% import "PetkoparaCrudGeneratorBundle::macros/th_sortable.html.twig" as macros %}
-                            <th>{{ macros.th_sortable('id',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'clanek') }}</th>
-                            <th>{{ macros.th_sortable('aktivniClanek',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'clanek') }}</th>
-                            <th>{{ macros.th_sortable('clanekZobrazenRedakci',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'clanek') }}</th>
-                            <th>{{ macros.th_sortable('cekaNaStanoveniRecenzentu',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'clanek') }}</th>
-                            <th>{{ macros.th_sortable('jsouStanoveniRecenzenti',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'clanek') }}</th>
-                            <th>{{ macros.th_sortable('probihaRecenzniRizeni',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'clanek') }}</th>
-                            <th>{{ macros.th_sortable('recenzniRizeniByloDokonceno',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'clanek') }}</th>
-                            <th>{{ macros.th_sortable('recenzniRizeniByloZruseno',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'clanek') }}</th>
-                            <th>{{ macros.th_sortable('novePodanaRevize',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'clanek') }}</th>
-                            <th>{{ macros.th_sortable('clanekPrijat',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'clanek') }}</th>
-                            <th>{{ macros.th_sortable('clanekPrijatSVyhradami',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'clanek') }}</th>
-                            <th>{{ macros.th_sortable('clanekPrijatVyzadujeFormalniDoplneni',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'clanek') }}</th>
-                            <th>{{ macros.th_sortable('clanekZamitnutNeobstalVRecenznimRizeni',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'clanek') }}</th>
-                            <th>{{ macros.th_sortable('clanekZamitnutNesplnujeSablonu',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'clanek') }}</th>
-                            <th>{{ macros.th_sortable('clanekZamitnutTematickyNevhodny',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'clanek') }}</th>
-                            <th>{{ macros.th_sortable('cekaSeNaAutorovuRevizi',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'clanek') }}</th>
-                            <th>{{ macros.th_sortable('nutnostPredatNovouReviziZpetRecenzentum',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'clanek') }}</th>
-                            <th>{{ macros.th_sortable('pozadavekNaNahrazeniRevizeAutorem',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'clanek') }}</th>
-                            <th>{{ macros.th_sortable('lzePodatNovouRevizi',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'clanek') }}</th>
-                            <th>{{ macros.th_sortable('nejednoznacnostRecenznihoRizeni',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'clanek') }}</th>
-                            <th>{{ macros.th_sortable('clanekVydan',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'clanek') }}</th>
-                            <th>{{ macros.th_sortable('cisloCasopisu',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'clanek') }}</th>
-                            <th>{{ macros.th_sortable('neregistrovaniSpoluautori',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'clanek') }}</th>
-                            <th>{{ macros.th_sortable('tematickeZamereniSlovne',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'clanek') }}</th>
-                            <th>{{ macros.th_sortable('tematickeZamereni',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'clanek') }}</th>
-                            <th>{{ macros.th_sortable('nabidnoutZnovuOdmitnutyClanek',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'clanek') }}</th>
-                            <th>{{ macros.th_sortable('uzaverkaCislaCasopisu',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'clanek') }}</th>
+                            <th>{{ macros.th_sortable('id',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'clanek', 'id') }}</th>
+                            <th>{{ macros.th_sortable('aktivniClanek',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'clanek', 'aktivní článek') }}</th>
+                            <th>{{ macros.th_sortable('clanekZobrazenRedakci',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'clanek', 'článek zobrazen redakci') }}</th>
+                            <th>{{ macros.th_sortable('cekaNaStanoveniRecenzentu',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'clanek', 'čeká na stanovení recenzentů') }}</th>
+                            <th>{{ macros.th_sortable('jsouStanoveniRecenzenti',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'clanek', 'jsou stanoveni recenzenti') }}</th>
+                            <th>{{ macros.th_sortable('probihaRecenzniRizeni',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'clanek', 'probíhá recenzní řízení') }}</th>
+                            <th>{{ macros.th_sortable('recenzniRizeniByloDokonceno',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'clanek', 'recenzní řízení bylo dokončeno') }}</th>
+                            <th>{{ macros.th_sortable('recenzniRizeniByloZruseno',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'clanek', 'recenzní řízení bylo zrušeno') }}</th>
+                            <th>{{ macros.th_sortable('novePodanaRevize',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'clanek', 'nově podaná revize') }}</th>
+                            <th>{{ macros.th_sortable('clanekPrijat',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'clanek', 'článek přijat') }}</th>
+                            <th>{{ macros.th_sortable('clanekPrijatSVyhradami',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'clanek', 'článek přijat s výhradami') }}</th>
+                            <th>{{ macros.th_sortable('clanekPrijatVyzadujeFormalniDoplneni',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'clanek', 'článek přijat, vyžaduje formalní doplnění') }}</th>
+                            <th>{{ macros.th_sortable('clanekZamitnutNeobstalVRecenznimRizeni',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'clanek', 'článek zamítnut, neobstál v recenzním řízení') }}</th>
+                            <th>{{ macros.th_sortable('clanekZamitnutNesplnujeSablonu',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'clanek', 'článek zamítnut, nesplňuje šablonu') }}</th>
+                            <th>{{ macros.th_sortable('clanekZamitnutTematickyNevhodny',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'clanek', 'článek zamítnut, tematicky nevhodný') }}</th>
+                            <th>{{ macros.th_sortable('cekaSeNaAutorovuRevizi',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'clanek', 'čeká se na autorovu revizi') }}</th>
+                            <th>{{ macros.th_sortable('nutnostPredatNovouReviziZpetRecenzentum',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'clanek', 'nutnost předat novou revizi zpět recenzentům') }}</th>
+                            <th>{{ macros.th_sortable('pozadavekNaNahrazeniRevizeAutorem',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'clanek', 'požadavek na nahrazení revize autorem') }}</th>
+                            <th>{{ macros.th_sortable('lzePodatNovouRevizi',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'clanek', 'lze podat novou revizi') }}</th>
+                            <th>{{ macros.th_sortable('nejednoznacnostRecenznihoRizeni',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'clanek', 'nejednoznačnost recenzního řízení') }}</th>
+                            <th>{{ macros.th_sortable('clanekVydan',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'clanek', 'článek vydan') }}</th>
+                            <th>{{ macros.th_sortable('cisloCasopisu',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'clanek', 'číslo časopisu') }}</th>
+                            <th>{{ macros.th_sortable('neregistrovaniSpoluautori',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'clanek', 'neregistrovaní spoluautoři') }}</th>
+                            <th>{{ macros.th_sortable('tematickeZamereniSlovne',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'clanek', 'tématické zaměření slovně') }}</th>
+                            <th>{{ macros.th_sortable('tematickeZamereni',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'clanek', 'tématické zaměření') }}</th>
+                            <th>{{ macros.th_sortable('nabidnoutZnovuOdmitnutyClanek',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'clanek', 'nabídnout znovu odmítnutý článek') }}</th>
+                            <th>{{ macros.th_sortable('uzaverkaCislaCasopisu',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'clanek', 'uzávěrka čísla časopisu') }}</th>
 
 
-                            <th width="130px">List</th>
+                            <th width="130px">Akce</th>
                         </tr>
                         </thead>
                         <tbody>
