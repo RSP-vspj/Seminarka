@@ -147,19 +147,19 @@
                             <th width="20px"><input type="checkbox" class="check-all" onclick="toggleAll(this)"></th>
 
                             {% import "PetkoparaCrudGeneratorBundle::macros/th_sortable.html.twig" as macros %}
-                            <th>{{ macros.th_sortable('id',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'revize') }}</th>
-                            <th>{{ macros.th_sortable('clanekID',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'revize') }}</th>
-                            <th>{{ macros.th_sortable('jmenoClanku',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'revize') }}</th>
-                            <th>{{ macros.th_sortable('cestaKSouboru',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'revize') }}</th>
-                            <th>{{ macros.th_sortable('komentarAutoru',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'revize') }}</th>
-                            <th>{{ macros.th_sortable('komentarRedaktora',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'revize') }}</th>
-                            <th>{{ macros.th_sortable('sdeleniAdmin',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'revize') }}</th>
-                            <th>{{ macros.th_sortable('ostatniSdeleni',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'revize') }}</th>
-                            <th>{{ macros.th_sortable('datumPridaniClanku',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'revize') }}</th>
-                            <th>{{ macros.th_sortable('uzaverkaRecenznihoRizeni',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'revize') }}</th>
+                            <th>{{ macros.th_sortable('id',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'revize', 'id') }}</th>
+                            <th>{{ macros.th_sortable('clanekID',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'revize', 'článek ID') }}</th>
+                            <th>{{ macros.th_sortable('jmenoClanku',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'revize', 'jméno článku') }}</th>
+                            <th>{{ macros.th_sortable('cestaKSouboru',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'revize', 'cesta k souboru') }}</th>
+                            <th>{{ macros.th_sortable('komentarAutoru',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'revize', 'komentář autorů') }}</th>
+                            <th>{{ macros.th_sortable('komentarRedaktora',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'revize', 'komentář redaktora') }}</th>
+                            <th>{{ macros.th_sortable('sdeleniAdmin',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'revize', 'sdělení admina') }}</th>
+                            <th>{{ macros.th_sortable('ostatniSdeleni',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'revize', 'ostatní sdělení') }}</th>
+                            <th>{{ macros.th_sortable('datumPridaniClanku',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'revize', 'datum přidání článku') }}</th>
+                            <th>{{ macros.th_sortable('uzaverkaRecenznihoRizeni',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'revize', 'uzávěrka recenzního řízení') }}</th>
 
 
-                            <th width="130px">List</th>
+                            <th width="130px">Akce</th>
                         </tr>
                         </thead>
                         <tbody>
