@@ -1,6 +1,7 @@
 body{
     background-color: white;
     padding: 0px 10px;
+    margin-bottom: 50px;
 }
 * {box-sizing: border-box;}
 
@@ -47,6 +48,15 @@ body{
     border: none;
     width: 175px;
 }
+/* Horizontalni lista - inputy styl */
+.horizontal input[type=password] {
+    padding: 6px;
+    margin-top: 8px;
+    margin-left: 8px;
+    font-size: 17px;
+    border: none;
+    width: 175px;
+}
 
 /* Horizontalni lista - submit inputu styl */
 .horizontal .login-container button {
@@ -61,6 +71,7 @@ body{
     border: none;
     cursor: pointer;
 }
+
 /* Horizontalni lista - submit inputu hover */
 .horizontal .login-container button:hover {
     background: #753535;
@@ -88,9 +99,9 @@ body{
 .vertical-menu {
     width: 200px;
     margin-top: 30px;
+    margin-bottom: 50px;
     float: left;
     overflow: hidden;
-
 }
 
 /*Vertikalni menu odkazy*/
