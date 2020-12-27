@@ -13,20 +13,33 @@ use Doctrine\ORM\Mapping as ORM;
 class Autori
 {
     /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
      * @ORM\Id
-     * @ORM\ManyToOne(targetEntity="Uzivatel", inversedBy="id")
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="uzivatel_id", type="integer")
      */
     private $uzivatelID;
 
     /**
-     * @ORM\Id
-     * @ORM\ManyToOne(targetEntity="Revize", inversedBy="clanekID")
+     * @var int
+     *
+     * @ORM\Column(name="clanek_id", type="integer")
      */
     private $clanekID;
 
     /**
-     * @ORM\Id
-     * @ORM\ManyToOne(targetEntity="Revize", inversedBy="cisloRevize")
+     * @var int
+     *
+     * @ORM\Column(name="cislo_revize", type="integer")
      */
     private $cisloRevize;
 
@@ -58,6 +71,13 @@ class Autori
      */
     private $autorSeznamenSVysledkyRecenznihoRizeni;
 
+    /**
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
 
     /**
      * Set uzivatelID
@@ -227,8 +247,8 @@ class Autori
         return $this->autorSeznamenSVysledkyRecenznihoRizeni;
     }
 
-    public function __toInt()
+    public function __toString()
     {
-        return $this->uzivatelID;
+        return (string)$this->id;
     }
 }

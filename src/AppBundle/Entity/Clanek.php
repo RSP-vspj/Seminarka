@@ -2,6 +2,7 @@
 
 namespace AppBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -13,10 +14,13 @@ use Doctrine\ORM\Mapping as ORM;
 class Clanek
 {
     /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
      * @ORM\Id
-     * @ORM\ManyToOne(targetEntity="Revize", inversedBy="clanekID")
+     * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $clanekID;
+    private $id;
 
     /**
      * @var bool
@@ -835,17 +839,8 @@ class Clanek
         return $this->uzaverkaCislaCasopisu;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getClanekID()
+    public function __toString()
     {
-        return $this->clanekID;
-    }
-
-    public function __toInt()
-    {
-        return $this->clanekID;
+        return (string)$this->id;
     }
 }
-

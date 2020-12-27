@@ -2,6 +2,7 @@
 
 namespace AppBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
 
@@ -240,11 +241,6 @@ class Uzivatel implements UserInterface, \Serializable
     public function setUzivatelAktivni($uzivatelAktivni)
     {
         $this->uzivatelAktivni = $uzivatelAktivni;
-    }
-
-    public function __toInt()
-    {
-        return $this->id;
     }
 
     public function getSalt()

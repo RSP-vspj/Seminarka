@@ -2,6 +2,7 @@
 
 namespace AppBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -13,26 +14,20 @@ use Doctrine\ORM\Mapping as ORM;
 class Revize
 {
     /**
-     * @ORM\Id
+     * @var int
+     *
      * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $clanekID;
+    private $id;
 
     /**
-     * @ORM\Id
-     * @ORM\Column(name="cislo_revize", type="integer")
+     * @var int
+     *
+     * @ORM\Column(name="clanek_id", type="integer")
      */
-    private $cisloRevize;
-
-    public function getClanekID()
-    {
-        return $this->clanekID;
-    }
-
-    public function getCisloRevize()
-    {
-        return $this->cisloRevize;
-    }
+    private $clanekID;
 
     /**
      * @var string
@@ -89,6 +84,29 @@ class Revize
      * @ORM\Column(name="uzaverka_recenzniho_rizeni", type="date", nullable=true)
      */
     private $uzaverkaRecenznihoRizeni;
+
+
+    /**
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * @param int $clanekID
+     */
+    public function setClanekID($clanekID)
+    {
+        $this->clanekID = $clanekID;
+    }
+
+
+    public function getClanekID()
+    {
+        return $this->clanekID;
+    }
 
     /**
      * Set cestaKSouboru
@@ -258,9 +276,24 @@ class Revize
         return $this->uzaverkaRecenznihoRizeni;
     }
 
-    public function __toInt()
+    public function __toString()
     {
-        return $this->clanekID;
+        return (string)$this->id;
+    }
+
+    /**
+     * @return string
+     */
+    public function getJmenoClanku()
+    {
+        return $this->jmenoClanku;
+    }
+
+    /**
+     * @param string $jmenoClanku
+     */
+    public function setJmenoClanku($jmenoClanku)
+    {
+        $this->jmenoClanku = $jmenoClanku;
     }
 }
-
