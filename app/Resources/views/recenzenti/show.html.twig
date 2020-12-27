@@ -1,0 +1,145 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ parent() }} - recenzenti
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div id="top" class="row">
+            <div class="page-header">
+                <h2>View recenzenti <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></h2>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <p><strong>Id</strong></p>
+                <p>
+                    {{ recenzenti.id }}
+                </p>
+
+            </div>
+            <div class="col-md-6">
+                <p><strong>Uzivatelid</strong></p>
+                <p>
+                    {{ recenzenti.uzivatelID }}
+                </p>
+
+            </div>
+            <div class="col-md-6">
+                <p><strong>Clanekid</strong></p>
+                <p>
+                    {{ recenzenti.clanekID }}
+                </p>
+
+            </div>
+            <div class="col-md-6">
+                <p><strong>Cislorevize</strong></p>
+                <p>
+                    {{ recenzenti.cisloRevize }}
+                </p>
+
+            </div>
+            <div class="col-md-6">
+                <p><strong>Pozadaveknarecenzizobrazen</strong></p>
+                <p>
+                    {% if recenzenti.pozadavekNaRecenziZobrazen %}Yes{% else %}No{% endif %}
+                </p>
+
+            </div>
+            <div class="col-md-6">
+                <p><strong>Pozadaveknarecenziprijat</strong></p>
+                <p>
+                    {% if recenzenti.pozadavekNaRecenziPrijat %}Yes{% else %}No{% endif %}
+                </p>
+
+            </div>
+            <div class="col-md-6">
+                <p><strong>Pozadaveknarecenziodmitnut</strong></p>
+                <p>
+                    {% if recenzenti.pozadavekNaRecenziOdmitnut %}Yes{% else %}No{% endif %}
+                </p>
+
+            </div>
+            <div class="col-md-6">
+                <p><strong>Recenzejedokoncena</strong></p>
+                <p>
+                    {% if recenzenti.recenzeJeDokoncena %}Yes{% else %}No{% endif %}
+                </p>
+
+            </div>
+            <div class="col-md-6">
+                <p><strong>Hodnoceniclankuslovni</strong></p>
+                <p>
+                    {{ recenzenti.hodnoceniClankuSlovni }}
+                </p>
+
+            </div>
+            <div class="col-md-6">
+                <p><strong>Hodnoceniclankuprinos</strong></p>
+                <p>
+                    {{ recenzenti.hodnoceniClankuPrinos }}
+                </p>
+
+            </div>
+            <div class="col-md-6">
+                <p><strong>Hodnoceniclankuoriginalita</strong></p>
+                <p>
+                    {{ recenzenti.hodnoceniClankuOriginalita }}
+                </p>
+
+            </div>
+            <div class="col-md-6">
+                <p><strong>Hodnoceniclankuodbornost</strong></p>
+                <p>
+                    {{ recenzenti.hodnoceniClankuOdbornost }}
+                </p>
+
+            </div>
+            <div class="col-md-6">
+                <p><strong>Hodnoceniclankujazyk</strong></p>
+                <p>
+                    {{ recenzenti.hodnoceniClankuJazyk }}
+                </p>
+
+            </div>
+            <div class="col-md-6">
+                <p><strong>Datumodevzdanirecenze</strong></p>
+                <p>
+                    {% if recenzenti.datumOdevzdaniRecenze %}{{ recenzenti.datumOdevzdaniRecenze|date('Y-m-d') }}{% endif %}
+                </p>
+
+            </div>
+        </div>
+
+        <hr/>
+
+
+        <div class="form-group">
+            <a class="btn btn-default" href="{{ path('recenzenti') }}">
+                <span class="glyphicon glyphicon-list" aria-hidden="true"></span>
+                Back to list
+            </a>
+            <a class="btn btn-primary" href="{{ path('recenzenti_edit', { 'id':  recenzenti.id }) }}">
+                <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                Edit
+            </a>
+            <a class="btn btn-info" href="{{ path('recenzenti_new') }}">
+                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                New
+            </a>
+            <form action="{{ path('recenzenti_delete', { 'id': recenzenti.id }) }}" method="post"
+                  style="display: inline-block">
+                <input type="hidden" name="_method" value="DELETE"/>
+                {{ form_widget(delete_form) }}
+                <button class="btn btn-danger" type="submit" onclick="return confirm('Are you sure');">
+                    <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                    Delete
+                </button>
+            </form>
+        </div>
+    </div>
+
+{% endblock %}
+

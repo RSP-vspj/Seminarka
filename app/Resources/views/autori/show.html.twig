@@ -1,0 +1,103 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ parent() }} - autori
+{% endblock %}
+
+{% block body %}
+
+    <div class="container">
+        <div id="top" class="row">
+            <div class="page-header">
+                <h2>View autori <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></h2>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <p><strong>Id</strong></p>
+                <p>
+                    {{ autori.id }}
+                </p>
+
+            </div>
+            <div class="col-md-6">
+                <p><strong>Uzivatelid</strong></p>
+                <p>
+                    {{ autori.uzivatelID }}
+                </p>
+
+            </div>
+            <div class="col-md-6">
+                <p><strong>Clanekid</strong></p>
+                <p>
+                    {{ autori.clanekID }}
+                </p>
+
+            </div>
+            <div class="col-md-6">
+                <p><strong>Cislorevize</strong></p>
+                <p>
+                    {{ autori.cisloRevize }}
+                </p>
+
+            </div>
+            <div class="col-md-6">
+                <p><strong>Pripominkyautorakrevizi</strong></p>
+                <p>
+                    {{ autori.pripominkyAutoraKRevizi }}
+                </p>
+
+            </div>
+            <div class="col-md-6">
+                <p><strong>Vyjadreniautorakvysledkurecenznihorizeni</strong></p>
+                <p>
+                    {{ autori.vyjadreniAutoraKVysledkuRecenznihoRizeni }}
+                </p>
+
+            </div>
+            <div class="col-md-6">
+                <p><strong>Autorprihlasenodpridaninejnovejsirecenze</strong></p>
+                <p>
+                    {% if autori.autorPrihlasenOdPridaniNejnovejsiRecenze %}Yes{% else %}No{% endif %}
+                </p>
+
+            </div>
+            <div class="col-md-6">
+                <p><strong>Autorseznamensvysledkyrecenznihorizeni</strong></p>
+                <p>
+                    {% if autori.autorSeznamenSVysledkyRecenznihoRizeni %}Yes{% else %}No{% endif %}
+                </p>
+
+            </div>
+        </div>
+
+        <hr/>
+
+
+        <div class="form-group">
+            <a class="btn btn-default" href="{{ path('autori') }}">
+                <span class="glyphicon glyphicon-list" aria-hidden="true"></span>
+                Back to list
+            </a>
+            <a class="btn btn-primary" href="{{ path('autori_edit', { 'id':  autori.id }) }}">
+                <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                Edit
+            </a>
+            <a class="btn btn-info" href="{{ path('autori_new') }}">
+                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                New
+            </a>
+            <form action="{{ path('autori_delete', { 'id': autori.id }) }}" method="post" style="display: inline-block">
+                <input type="hidden" name="_method" value="DELETE"/>
+                {{ form_widget(delete_form) }}
+                <button class="btn btn-danger" type="submit" onclick="return confirm('Are you sure');">
+                    <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                    Delete
+                </button>
+            </form>
+        </div>
+    </div>
+
+{% endblock %}
+
