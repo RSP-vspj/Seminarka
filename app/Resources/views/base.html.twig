@@ -1,67 +1,94 @@
-{#{% if error %}#}
-{#    <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>#}
-{#{% endif %}#}
-
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8" />
-        <title>{% block title %}RSP Tarzani{% endblock %}</title>
-        {% block stylesheets %}
-            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-            <link rel="stylesheet" href="{{ asset('/styles/main.css') }}" />
-        {% endblock %}
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-    </head>
-    <body>
-    <div class="header">
+<head>
+    <meta charset="UTF-8"/>
+    <title>{% block title %}RSP Tarzani{% endblock %}</title>
+    {% block stylesheets %}
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="{{ asset('/styles/main.css') }}"/>
+    {% endblock %}
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
+</head>
+<body>
+<div class="header">
     <img src="/images/vspj-logo.svg">
     <h2 style="color: black;">&emsp;Logos polytechnikos</h2>
+</div>
+
+
+<div class="horizontal">
+    <a href="{{ path('homepage') }}">Domovská stránka</a>
+    <a href="{{ path('onas') }}">O nás</a>
+    <a href="{{ path('kontakt') }}">Kontakt</a>
+
+
+    <div class="login-container"/>
+    {% if (is_granted('IS_AUTHENTICATED_FULLY') == false) %}
+        <form action="{{ path("homepage") }}" method="post"/>
+        <input type="text" placeholder="Uživ. jméno" id="username" name="_username"
+               value="{% if last_username is defined %} {{ last_username }} {% endif %}"/>
+        <input type="password" placeholder="Heslo" name="_password"/>
+        <input type="hidden" name="_target_path" value="/homepage"/>
+        <button type="submit">Přihlášení</button>
+        </form>
+
+    {% else %}
+        <form action="{{ path("logout") }}" method="post">
+            <span class="label label-info" style="margin: 16px; font-size: 1em; float:left"> {{ app.user }}</span>
+            <button type="submit">Odhlásit se</button>
+        </form>
+    {% endif %}
+</div>
+</div>
+
+<div class="vertical-menu">
+    <a href="{{ path('pokyny') }}">Pokyny pro přispěvatele</a>
+    <a href="{{ path('sablona') }}">Šablona</a>
+    <a href="{{ path('recenzni_rizeni') }}">Recenzní řízení</a>
+    <a href="#">Zadat článek</a>
+    <a href="#">Seznam článků</a>
+    {% if is_granted([ 'ROLE_ADMIN', 'ROLE_REDAKTOR', 'ROLE_SEFREDAKTOR', 'ROLE_AUTOR_REDAKTOR' ]) %}
+        <a href="{{ path('uzivatel') }}">Uživatelé</a>
+    {% endif %}
+
+    <br><br>
+
+    <b>Adresa nakladatele:</b><br>
+    Vysoká škola polytechnická Jihlava<br>
+    redakce LOGOS POLYTECHNIKOS<br>
+    Tolstého 1556/16<br>
+    586 01 Jihlava<br><br>
+    IČ: 71226401<br>
+    DIČ: CZ71226401<br><br>
+    <b>Kontaktní osoba:</b><br>
+    Jana Janová<br>
+    e-mail: janova@jana.cz
+</div>
+
+<div class="container">
+    <div class="row">
+        {% for type, flashMessages in app.session.flashbag.all() %}
+            {% for flashMessage in flashMessages %}
+                <div class="alert alert-{{ type }} text-center">
+                    <strong>{{ flashMessage|raw }}</strong>
+                </div>
+            {% endfor %}
+        {% endfor %}
     </div>
+</div>
 
 
+{% block body %}{% endblock %}
 
-    <div class="horizontal">
-        <a href="{{ path('homepage') }}">Domovská stránka</a>
-        <a href="{{ path('onas') }}">O nás</a>
-        <a href="{{ path('kontakt') }}">Kontakt</a>
-        <div class="login-container" />
-            <form action="{{ path("homepage") }}" method="post" />
-                <input type="text" placeholder="Uživ. jméno" id="username" name="_username" value="{% if last_username is defined %} {{ last_username }} {% endif %}" />
-                <input type="password" placeholder="Heslo" name="_password" />
-                <input type="hidden" name="_target_path" value="/uzivatel" />
-                <button type="submit">Přihlášení</button>
-            </form>
-        </div>
-    </div>
-    <div class="vertical-menu">
-        <a href="{{ path('pokyny') }}">Pokyny pro přispěvatele</a>
-        <a href="{{ path('sablona') }}">Šablona</a>
-        <a href="{{ path('recenzni_rizeni') }}">Recenzní řízení</a>
-        <a href="#">Zadat článek</a>
-        <a href="#">Seznam článků</a>
-        <br><br>
 
-        <b>Adresa nakladatele:</b><br>
-        Vysoká škola polytechnická Jihlava<br>
-        redakce LOGOS POLYTECHNIKOS<br>
-        Tolstého 1556/16<br>
-        586 01 Jihlava<br><br>
-        IČ: 71226401<br>
-        DIČ: CZ71226401<br><br>
-        <b>Kontaktní osoba:</b><br>
-        Jana Janová<br>
-        e-mail: janova@jana.cz
-    </div>
-        {% block body %}{% endblock %}
+<div class="footer">
+    Team Tarzani @ Vysoká škola polytechnická Jihlava 2020
 
-    <div class="footer">
-        Team Tarzani @ Vysoká škola polytechnická Jihlava 2020
-
-    </div>
-        {% block javascripts %}{% endblock %}
-    </body>
+</div>
+{% block javascripts %}{% endblock %}
+</body>
 </html>
