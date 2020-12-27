@@ -159,23 +159,23 @@
                             <th width="20px"><input type="checkbox" class="check-all" onclick="toggleAll(this)"></th>
 
                             {% import "PetkoparaCrudGeneratorBundle::macros/th_sortable.html.twig" as macros %}
-                            <th>{{ macros.th_sortable('id',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'recenzenti') }}</th>
-                            <th>{{ macros.th_sortable('uzivatelID',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'recenzenti') }}</th>
-                            <th>{{ macros.th_sortable('clanekID',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'recenzenti') }}</th>
-                            <th>{{ macros.th_sortable('cisloRevize',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'recenzenti') }}</th>
-                            <th>{{ macros.th_sortable('pozadavekNaRecenziZobrazen',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'recenzenti') }}</th>
-                            <th>{{ macros.th_sortable('pozadavekNaRecenziPrijat',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'recenzenti') }}</th>
-                            <th>{{ macros.th_sortable('pozadavekNaRecenziOdmitnut',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'recenzenti') }}</th>
-                            <th>{{ macros.th_sortable('recenzeJeDokoncena',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'recenzenti') }}</th>
-                            <th>{{ macros.th_sortable('hodnoceniClankuSlovni',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'recenzenti') }}</th>
-                            <th>{{ macros.th_sortable('hodnoceniClankuPrinos',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'recenzenti') }}</th>
-                            <th>{{ macros.th_sortable('hodnoceniClankuOriginalita',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'recenzenti') }}</th>
-                            <th>{{ macros.th_sortable('hodnoceniClankuOdbornost',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'recenzenti') }}</th>
-                            <th>{{ macros.th_sortable('hodnoceniClankuJazyk',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'recenzenti') }}</th>
-                            <th>{{ macros.th_sortable('datumOdevzdaniRecenze',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'recenzenti') }}</th>
+                            <th>{{ macros.th_sortable('id',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'recenzenti', 'id') }}</th>
+                            <th>{{ macros.th_sortable('uzivatelID',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'recenzenti', 'uživatel ID') }}</th>
+                            <th>{{ macros.th_sortable('clanekID',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'recenzenti', 'článek ID') }}</th>
+                            <th>{{ macros.th_sortable('cisloRevize',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'recenzenti', 'číslo revize') }}</th>
+                            <th>{{ macros.th_sortable('pozadavekNaRecenziZobrazen',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'recenzenti', 'požadavek na recenzi zobrazen') }}</th>
+                            <th>{{ macros.th_sortable('pozadavekNaRecenziPrijat',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'recenzenti', 'požadavek na recenzi přijat') }}</th>
+                            <th>{{ macros.th_sortable('pozadavekNaRecenziOdmitnut',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'recenzenti', 'požadavek na recenzi odmítnut') }}</th>
+                            <th>{{ macros.th_sortable('recenzeJeDokoncena',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'recenzenti', 'recenze je dokončena') }}</th>
+                            <th>{{ macros.th_sortable('hodnoceniClankuSlovni',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'recenzenti', 'hodnocení článku: slovní') }}</th>
+                            <th>{{ macros.th_sortable('hodnoceniClankuPrinos',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'recenzenti', 'hodnocení článku: přínos') }}</th>
+                            <th>{{ macros.th_sortable('hodnoceniClankuOriginalita',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'recenzenti', 'hodnocení článku: originalita') }}</th>
+                            <th>{{ macros.th_sortable('hodnoceniClankuOdbornost',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'recenzenti', 'hodnocení článku: odbornost') }}</th>
+                            <th>{{ macros.th_sortable('hodnoceniClankuJazyk',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'recenzenti', 'hodnocení článku: jazyk') }}</th>
+                            <th>{{ macros.th_sortable('datumOdevzdaniRecenze',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'recenzenti', 'datum odevzdání recenze') }}</th>
 
 
-                            <th width="130px">List</th>
+                            <th width="130px">Akce</th>
                         </tr>
                         </thead>
                         <tbody>
