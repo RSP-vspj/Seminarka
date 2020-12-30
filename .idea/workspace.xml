@@ -88,7 +88,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../tab" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -116,6 +116,10 @@
       <workItem from="1607355016816" duration="15929000" />
       <workItem from="1607800991036" duration="377000" />
       <workItem from="1607809102600" duration="4000" />
+      <workItem from="1609263736499" duration="9000" />
+      <workItem from="1609263747544" duration="2003000" />
+      <workItem from="1609273894404" duration="2936000" />
+      <workItem from="1609276981600" duration="7000" />
     </task>
     <servers />
   </component>
@@ -135,9 +139,14 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="740" y="274" key="FileChooserDialogImpl" timestamp="1607355449771">
+    <state x="994" y="121" key="#com.intellij.ide.util.MemberChooser" timestamp="1609263917499">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state x="994" y="121" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1609263917499" />
+    <state x="740" y="274" key="FileChooserDialogImpl" timestamp="1609263744113">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1609263744113" />
     <state x="740" y="274" key="FileChooserDialogImpl/1920.60.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1607355449771" />
     <state x="461" y="164" key="SettingsEditor" timestamp="1607207161107">
       <screen x="0" y="0" width="1920" height="1040" />

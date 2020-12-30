@@ -262,6 +262,7 @@
                                 <td>{{ clanek.tematickeZamereni }}</td>
                                 <td>{%- if clanek.nabidnoutZnovuOdmitnutyClanek %}{{ clanek.nabidnoutZnovuOdmitnutyClanek|date('Y-m-d') }}{% endif %}</td>
                                 <td>{%- if clanek.uzaverkaCislaCasopisu %}{{ clanek.uzaverkaCislaCasopisu|date('Y-m-d') }}{% endif %}</td>
+                                <td>{{ clanek.uzivatel }}</td>
 
                                 <td class="actions">
                                     <a onclick="return confirm('Are you sure!');" title="Delete"

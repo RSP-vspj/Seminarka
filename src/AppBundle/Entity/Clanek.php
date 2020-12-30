@@ -23,6 +23,28 @@ class Clanek
     private $id;
 
     /**
+     * @ORM\ManyToOne(targetEntity="Uzivatel", inversedBy="clanky")
+     * @ORM\JoinColumn(name="uzivatel_id", referencedColumnName="id")
+     */
+    private $uzivatel;
+
+    /**
+     * @return mixed
+     */
+    public function getUzivatel()
+    {
+        return $this->uzivatel;
+    }
+
+    /**
+     * @param mixed $uzivatel
+     */
+    public function setUzivatel($uzivatel)
+    {
+        $this->uzivatel = $uzivatel;
+    }
+
+    /**
      * @var bool
      *
      * @ORM\Column(name="aktivni_clanek", type="boolean")
@@ -182,6 +204,36 @@ class Clanek
      * @ORM\Column(name="tematicke_zamereni_slovne", type="string", length=255, nullable=true)
      */
     private $tematickeZamereniSlovne;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="jmeno_clanku", type="string", length=255, nullable=false)
+     */
+    private $jmenoClanku;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="cesta_k_souboru", type="string", length=255, nullable=false)
+     */
+    private $cestaKsouboru;
+
+    /**
+     * @return string
+     */
+    public function getJmenoClanku()
+    {
+        return $this->jmenoClanku;
+    }
+
+    /**
+     * @param string $jmenoClanku
+     */
+    public function setJmenoClanku($jmenoClanku)
+    {
+        $this->jmenoClanku = $jmenoClanku;
+    }
 
     /**
      * @var int
@@ -842,5 +894,21 @@ class Clanek
     public function __toString()
     {
         return (string)$this->id;
+    }
+
+    /**
+     * @return string
+     */
+    public function getCestaKsouboru()
+    {
+        return $this->cestaKsouboru;
+    }
+
+    /**
+     * @param string $cestaKsouboru
+     */
+    public function setCestaKsouboru($cestaKsouboru)
+    {
+        $this->cestaKsouboru = $cestaKsouboru;
     }
 }

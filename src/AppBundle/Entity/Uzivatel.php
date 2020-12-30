@@ -24,6 +24,16 @@ class Uzivatel implements UserInterface, \Serializable
     private $id;
 
     /**
+     * @ORM\OneToMany(targetEntity="Clanek", mappedBy="uzivatel")
+     */
+    private $clanky;
+
+    public function __construct()
+    {
+        $this->clanky = new ArrayCollection();
+    }
+
+    /**
      * @var bool
      *
      * @ORM\Column(name="uzivatel_aktivni", type="boolean")

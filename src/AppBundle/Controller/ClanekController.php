@@ -30,8 +30,10 @@ class ClanekController extends Controller
         $em = $this->getDoctrine()->getManager();
         $queryBuilder = $em->getRepository('AppBundle:Clanek')->createQueryBuilder('e');
 
+
         list($filterForm, $queryBuilder) = $this->filter($queryBuilder, $request);
         list($claneks, $pagerHtml) = $this->paginator($queryBuilder, $request);
+
         
         $totalOfRecordsString = $this->getTotalOfRecordsString($queryBuilder, $request);
 
