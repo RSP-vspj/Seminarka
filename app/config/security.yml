@@ -29,23 +29,10 @@ security:
                 path: /logout
                 target: /homepage
 
-        main:
-            anonymous: ~
-            # activate different ways to authenticate
-            logout_on_user_change: true
-            # https://symfony.com/doc/current/security.html#a-configuring-how-your-users-will-authenticate
-            #http_basic: ~
-
-            # https://symfony.com/doc/current/security/form_login_setup.html
-            #form_login: ~
-            pattern:    ^/
-            http_basic: ~
-            provider: our_db_provider
-
     access_control:
         #povolení přihl. formuláře pro všechny
         - { path: ^/homepage, roles: IS_AUTHENTICATED_ANONYMOUSLY }
         #povolení cesty uzivatel pro admin a user
         - { path: ^/uzivatel, roles: [ ROLE_ADMIN, ROLE_REDAKTOR, ROLE_SEFREDAKTOR, ROLE_AUTOR_REDAKTOR ] }
         #povolení cesty clanek pro admin a user
-        - { path: ^/clanek, roles: [ ROLE_ADMIN, ROLE_REDAKTOR, ROLE_SEFREDAKTOR, ROLE_AUTOR_REDAKTOR ] }
+        - { path: ^/clanek, roles: [ ROLE_ADMIN, ROLE_REDAKTOR, ROLE_SEFREDAKTOR, ROLE_AUTOR_REDAKTOR, ROLE_UZIVATEL ] }

@@ -49,7 +49,9 @@
     <a href="{{ path('pokyny') }}">Pokyny pro přispěvatele</a>
     <a href="{{ path('sablona') }}">Šablona</a>
     <a href="{{ path('recenzni_rizeni') }}">Recenzní řízení</a>
-    <a href="#">Zadat článek</a>
+    {% if is_granted([ 'ROLE_ADMIN', 'ROLE_REDAKTOR', 'ROLE_SEFREDAKTOR', 'ROLE_AUTOR_REDAKTOR', 'ROLE_UZIVATEL' ]) %}
+        <a href="{{ path('clanek_new') }}">Zadat článek</a>
+    {% endif %}
     {% if is_granted([ 'ROLE_ADMIN', 'ROLE_REDAKTOR', 'ROLE_SEFREDAKTOR', 'ROLE_AUTOR_REDAKTOR' ]) %}
         <a href="{{ path('clanek') }}">Seznam článků</a>
         <a href="{{ path('uzivatel') }}">Uživatelé</a>

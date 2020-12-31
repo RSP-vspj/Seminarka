@@ -15,6 +15,7 @@ class ClanekFilterType extends AbstractType
     {
         $builder
             ->add('id', Filters\NumberFilterType::class)
+            ->add('uzivatel', Filters\TextFilterType::class)
             ->add('aktivniClanek', Filters\BooleanFilterType::class)
             ->add('clanekZobrazenRedakci', Filters\BooleanFilterType::class)
             ->add('cekaNaStanoveniRecenzentu', Filters\BooleanFilterType::class)
@@ -41,6 +42,8 @@ class ClanekFilterType extends AbstractType
             ->add('tematickeZamereni', Filters\NumberFilterType::class)
             ->add('nabidnoutZnovuOdmitnutyClanek', Filters\DateFilterType::class)
             ->add('uzaverkaCislaCasopisu', Filters\DateFilterType::class)
+            ->add('jmenoClanku', Filters\TextFilterType::class)
+            ->add('cestaKsouboru', Filters\TextFilterType::class)
         
         ;
         $builder->setMethod("GET");

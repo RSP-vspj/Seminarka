@@ -24,6 +24,15 @@
                             <div class="col-md-6">{{ form_row(filterForm.id) }}</div>
 
 
+                            <div class="col-md-6">{{ form_row(filterForm.uzivatel) }}</div>
+
+
+                            <div class="col-md-6">{{ form_row(filterForm.jmenoClanku) }}</div>
+
+
+                            <div class="col-md-6">{{ form_row(filterForm.cestaKsouboru) }}</div>
+
+
                             <div class="col-md-6">{{ form_row(filterForm.aktivniClanek) }}</div>
 
 
@@ -199,6 +208,9 @@
 
                             {% import "PetkoparaCrudGeneratorBundle::macros/th_sortable.html.twig" as macros %}
                             <th>{{ macros.th_sortable('id',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'clanek', 'id') }}</th>
+                            <th>{{ macros.th_sortable('uzivatel',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'clanek', 'uživatel') }}</th>
+                            <th>{{ macros.th_sortable('jmenoClanku',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'clanek', 'jméno článku') }}</th>
+                            <th>{{ macros.th_sortable('cestaKsouboru',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'clanek', 'cesta k souboru') }}</th>
                             <th>{{ macros.th_sortable('aktivniClanek',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'clanek', 'aktivní článek') }}</th>
                             <th>{{ macros.th_sortable('clanekZobrazenRedakci',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'clanek', 'článek zobrazen redakci') }}</th>
                             <th>{{ macros.th_sortable('cekaNaStanoveniRecenzentu',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'clanek', 'čeká na stanovení recenzentů') }}</th>
@@ -226,7 +238,6 @@
                             <th>{{ macros.th_sortable('nabidnoutZnovuOdmitnutyClanek',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'clanek', 'nabídnout znovu odmítnutý článek') }}</th>
                             <th>{{ macros.th_sortable('uzaverkaCislaCasopisu',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'clanek', 'uzávěrka čísla časopisu') }}</th>
 
-
                             <th width="130px">Akce</th>
                         </tr>
                         </thead>
@@ -236,6 +247,9 @@
                                 <td><input type="checkbox" name="ids[]" onclick='bulkSubmitBtnManage();'
                                            class="check-all" value="{{ clanek.id }}"/></td>
                                 <td><a href="{{ path('clanek_edit', { 'id': clanek.id }) }}">{{ clanek.id }}</a></td>
+                                <td>{%- if clanek.uzivatel%}{{ clanek.uzivatel }}{% endif %}</td>
+                                <td>{%- if clanek.jmenoClanku%}{{ clanek.jmenoClanku }}{% endif %}</td>
+                                <td>{%- if clanek.cestaKsouboru%}{{ clanek.cestaKsouboru }}{% endif %}</td>
                                 <td>{%- if clanek.aktivniClanek %}Yes{% else %}No{% endif %}</td>
                                 <td>{%- if clanek.clanekZobrazenRedakci %}Yes{% else %}No{% endif %}</td>
                                 <td>{%- if clanek.cekaNaStanoveniRecenzentu %}Yes{% else %}No{% endif %}</td>
@@ -262,7 +276,6 @@
                                 <td>{{ clanek.tematickeZamereni }}</td>
                                 <td>{%- if clanek.nabidnoutZnovuOdmitnutyClanek %}{{ clanek.nabidnoutZnovuOdmitnutyClanek|date('Y-m-d') }}{% endif %}</td>
                                 <td>{%- if clanek.uzaverkaCislaCasopisu %}{{ clanek.uzaverkaCislaCasopisu|date('Y-m-d') }}{% endif %}</td>
-                                <td>{{ clanek.uzivatel }}</td>
 
                                 <td class="actions">
                                     <a onclick="return confirm('Are you sure!');" title="Delete"

@@ -3,6 +3,7 @@
 namespace AppBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
@@ -10,7 +11,11 @@ use Pagerfanta\Pagerfanta;
 use Pagerfanta\Adapter\DoctrineORMAdapter;
 use Pagerfanta\View\TwitterBootstrap3View;
 
+use Symfony\Component\HttpFoundation\File\Exception\FileException;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
+
 use AppBundle\Entity\Clanek;
+use AppBundle\Entity\ClanekType;
 
 /**
  * Clanek controller.
@@ -163,26 +168,96 @@ class ClanekController extends Controller
      */
     public function newAction(Request $request)
     {
-    
         $clanek = new Clanek();
         $form   = $this->createForm('AppBundle\Form\ClanekType', $clanek);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+            // nastav sloupce, ktere se nevyplnuji z formulare, ale jsou potrebne
+            $clanek = $this->clanekNastavDBsloupce($clanek);
+
+            // nahraj clanek do adresare
+            $clanekSoubor = $form->get('clanekSoubor')->getData();
+
+            $originalFilename = pathinfo($clanekSoubor->getClientOriginalName(), PATHINFO_FILENAME);
+
+            // nejde mi nainstalovat ext-intl balik pro transliterator_transliterate, dodelat
+            $safeFilename = $originalFilename;
+//            // this is needed to safely include the file name as part of the URL
+//            $safeFilename = transliterator_transliterate('Any-Latin; Latin-ASCII; [^A-Za-z0-9_] remove; Lower()', $originalFilename);
+            $newFilename = $clanek->getUzivatel() .'_'.$safeFilename.'-'.date('Ymd-Hi').'.'.$clanekSoubor->guessExtension();
+
+            // Move the file to the directory where files are stored
+            try {
+                $clanekSoubor->move(
+                    $this->getParameter('clanky_adresar'),
+                    $newFilename
+                );
+            } catch (FileException $e) {
+                $this->get('session')->getFlashBag()->add('error', 'Problém se souborem.');
+            }
+
+            // updates the 'CestaKsouboru' property to store the PDF or doc(x)file name
+            // instead of its contents
+            $clanek->setCestaKsouboru($newFilename);
+
+
             $em = $this->getDoctrine()->getManager();
             $em->persist($clanek);
             $em->flush();
             
             $editLink = $this->generateUrl('clanek_edit', array('id' => $clanek->getId()));
-            $this->get('session')->getFlashBag()->add('success', "<a href='$editLink'>New clanek was created successfully.</a>" );
+            $this->get('session')->getFlashBag()->add('success', "<a href='$editLink'>Nový článek byl úspěšně přidán.</a>" );
             
             $nextAction=  $request->get('submit') == 'save' ? 'clanek' : 'clanek_new';
             return $this->redirectToRoute($nextAction);
         }
+
         return $this->render('clanek/new.html.twig', array(
             'clanek' => $clanek,
             'form'   => $form->createView(),
         ));
+    }
+
+    /**
+     * Nastav potrebne sloupce v DB, aby entita clanek mohla vytvorit zaznam v DB
+     * Tyto parametry se nenastavuji uzivatelem pres formular
+     *
+     * @return Clanek
+     */
+    private function clanekNastavDBsloupce(Clanek $clanek) {
+        // setUzivatel ocekava entitu Uzivatel, ne integer (napr. id 2)
+        // proto nejdrive nactu entitu pro dane ID uzivatele
+        $em = $this->getDoctrine()->getManager();
+        $uzivatel = $em->getRepository(\AppBundle\Entity\Uzivatel::class)->find($this->getUser()->getId());
+        // a pote zavolam setUzivatel() s touto entitou
+        $clanek->setUzivatel($uzivatel);
+
+        $clanek->setAktivniClanek(1);
+        $clanek->setTematickeZamereni(1);
+        $clanek->setCekaNaStanoveniRecenzentu(1);
+        $clanek->setJsouStanoveniRecenzenti(0);
+        $clanek->setClanekZobrazenRedakci(0);
+        $clanek->setProbihaRecenzniRizeni(0);
+        $clanek->setRecenzniRizeniByloDokonceno(0);
+        $clanek->setRecenzniRizeniByloZruseno(0);
+        $clanek->setNovePodanaRevize(0);
+        $clanek->setClanekPrijat(0);
+        $clanek->setClanekPrijatSVyhradami(0);
+        $clanek->setClanekPrijatVyzadujeFormalniDoplneni(0);
+        $clanek->setClanekZamitnutNeobstalVRecenznimRizeni(0);
+        $clanek->setClanekZamitnutNesplnujeSablonu(0);
+        $clanek->setClanekZamitnutTematickyNevhodny(0);
+        $clanek->setCekaSeNaAutorovuRevizi(0);
+        $clanek->setNutnostPredatNovouReviziZpetRecenzentum(0);
+        $clanek->setPozadavekNaNahrazeniRevizeAutorem(0);
+        $clanek->setLzePodatNovouRevizi(0);
+        $clanek->setNejednoznacnostRecenznihoRizeni(0);
+        $clanek->setClanekVydan(0);
+        $clanek->setUzaverkaCislaCasopisu(new \DateTime());
+        $clanek->setCestaKsouboru('test');
+        return $clanek;
     }
     
 

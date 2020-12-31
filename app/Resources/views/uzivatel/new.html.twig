@@ -4,6 +4,11 @@
     {{ parent() }} - Nový uživatel
 {% endblock %}
 
+{% block stylesheets %}
+    {{ parent() }}
+    {% form_theme form 'bootstrap_3_horizontal_layout.html.twig' %}
+{% endblock %}
+
 {% block body %}
 
     <div class="container" style="margin-left: 15px;">
