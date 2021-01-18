@@ -121,10 +121,10 @@ body{
 
 /*Kontejner obsahu*/
 .container{
-    margin-top: 20px;
     float:left;
     overflow: hidden;
-
+    margin: 0 auto -40px;
+    padding: 0 20px 40px;
 }
 
 /*Hlavicka*/
