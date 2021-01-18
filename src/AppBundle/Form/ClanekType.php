@@ -40,6 +40,8 @@ class ClanekType extends AbstractType
                         'mimeTypes' => [
                             'application/pdf',
                             'application/x-pdf',
+                            'application/msword',
+                            'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
                         ],
                         'mimeTypesMessage' => 'Please upload a valid PDF or doc(x) document',
                     ])
