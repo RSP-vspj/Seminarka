@@ -7,6 +7,8 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\BinaryFileResponse;;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\File\File;
+use Symfony\Component\HttpFoundation\ResponseHeaderBag;
 
 
 class DefaultController extends Controller
@@ -92,5 +94,15 @@ class DefaultController extends Controller
         $filename = "Recenzní řízení časopisu LOGOS POLYTECHNIKOS.pdf";
 
         return new BinaryFileResponse($publicResourcesFolderPath.$filename);
+    }
+
+    /**
+     * @Route("/download_file", name="download_file")
+     */
+    public function download_file(Request $request)
+    {
+        $this->denyAccessUnlessGranted(['ROLE_ADMIN', 'ROLE_UZIVATEL', 'ROLE_REDAKTOR', 'ROLE_RECENZENT', 'ROLE_SEFREDAKTOR'], null, 'User tried to access a page without having ROLE_ADMIN');
+        $soubor = new File($this->get('kernel')->getRootDir() . '/../clanky/' . $request->get("jmeno"));
+        return $this->file($soubor);
     }
 }

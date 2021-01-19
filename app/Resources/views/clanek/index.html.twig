@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}
-    {{ parent() }} - clanek index
+    {{ parent() }} - články
 {% endblock %}
 
 {% block body %}
@@ -36,83 +36,83 @@
                             <div class="col-md-6">{{ form_row(filterForm.aktivniClanek) }}</div>
 
 
-                            <div class="col-md-6">{{ form_row(filterForm.clanekZobrazenRedakci) }}</div>
+{#                            <div class="col-md-6">{{ form_row(filterForm.clanekZobrazenRedakci) }}</div>#}
 
 
-                            <div class="col-md-6">{{ form_row(filterForm.cekaNaStanoveniRecenzentu) }}</div>
+{#                            <div class="col-md-6">{{ form_row(filterForm.cekaNaStanoveniRecenzentu) }}</div>#}
 
 
-                            <div class="col-md-6">{{ form_row(filterForm.jsouStanoveniRecenzenti) }}</div>
+{#                            <div class="col-md-6">{{ form_row(filterForm.jsouStanoveniRecenzenti) }}</div>#}
 
 
-                            <div class="col-md-6">{{ form_row(filterForm.probihaRecenzniRizeni) }}</div>
+{#                            <div class="col-md-6">{{ form_row(filterForm.probihaRecenzniRizeni) }}</div>#}
 
 
-                            <div class="col-md-6">{{ form_row(filterForm.recenzniRizeniByloDokonceno) }}</div>
+{#                            <div class="col-md-6">{{ form_row(filterForm.recenzniRizeniByloDokonceno) }}</div>#}
 
 
-                            <div class="col-md-6">{{ form_row(filterForm.recenzniRizeniByloZruseno) }}</div>
+{#                            <div class="col-md-6">{{ form_row(filterForm.recenzniRizeniByloZruseno) }}</div>#}
 
 
-                            <div class="col-md-6">{{ form_row(filterForm.novePodanaRevize) }}</div>
+{#                            <div class="col-md-6">{{ form_row(filterForm.novePodanaRevize) }}</div>#}
 
 
-                            <div class="col-md-6">{{ form_row(filterForm.clanekPrijat) }}</div>
+{#                            <div class="col-md-6">{{ form_row(filterForm.clanekPrijat) }}</div>#}
 
 
-                            <div class="col-md-6">{{ form_row(filterForm.clanekPrijatSVyhradami) }}</div>
+{#                            <div class="col-md-6">{{ form_row(filterForm.clanekPrijatSVyhradami) }}</div>#}
 
 
-                            <div class="col-md-6">{{ form_row(filterForm.clanekPrijatVyzadujeFormalniDoplneni) }}</div>
+{#                            <div class="col-md-6">{{ form_row(filterForm.clanekPrijatVyzadujeFormalniDoplneni) }}</div>#}
 
 
-                            <div class="col-md-6">{{ form_row(filterForm.clanekZamitnutNeobstalVRecenznimRizeni) }}</div>
+{#                            <div class="col-md-6">{{ form_row(filterForm.clanekZamitnutNeobstalVRecenznimRizeni) }}</div>#}
 
 
-                            <div class="col-md-6">{{ form_row(filterForm.clanekZamitnutNesplnujeSablonu) }}</div>
+{#                            <div class="col-md-6">{{ form_row(filterForm.clanekZamitnutNesplnujeSablonu) }}</div>#}
 
 
-                            <div class="col-md-6">{{ form_row(filterForm.clanekZamitnutTematickyNevhodny) }}</div>
+{#                            <div class="col-md-6">{{ form_row(filterForm.clanekZamitnutTematickyNevhodny) }}</div>#}
 
 
-                            <div class="col-md-6">{{ form_row(filterForm.cekaSeNaAutorovuRevizi) }}</div>
+{#                            <div class="col-md-6">{{ form_row(filterForm.cekaSeNaAutorovuRevizi) }}</div>#}
 
 
-                            <div class="col-md-6">{{ form_row(filterForm.nutnostPredatNovouReviziZpetRecenzentum) }}</div>
+{#                            <div class="col-md-6">{{ form_row(filterForm.nutnostPredatNovouReviziZpetRecenzentum) }}</div>#}
 
 
-                            <div class="col-md-6">{{ form_row(filterForm.pozadavekNaNahrazeniRevizeAutorem) }}</div>
+{#                            <div class="col-md-6">{{ form_row(filterForm.pozadavekNaNahrazeniRevizeAutorem) }}</div>#}
 
 
-                            <div class="col-md-6">{{ form_row(filterForm.lzePodatNovouRevizi) }}</div>
+{#                            <div class="col-md-6">{{ form_row(filterForm.lzePodatNovouRevizi) }}</div>#}
 
 
-                            <div class="col-md-6">{{ form_row(filterForm.nejednoznacnostRecenznihoRizeni) }}</div>
+{#                            <div class="col-md-6">{{ form_row(filterForm.nejednoznacnostRecenznihoRizeni) }}</div>#}
 
 
-                            <div class="col-md-6">{{ form_row(filterForm.clanekVydan) }}</div>
+{#                            <div class="col-md-6">{{ form_row(filterForm.clanekVydan) }}</div>#}
 
 
-                            <div class="col-md-6">{{ form_row(filterForm.cisloCasopisu) }}</div>
+{#                            <div class="col-md-6">{{ form_row(filterForm.cisloCasopisu) }}</div>#}
 
 
-                            <div class="col-md-6">{{ form_row(filterForm.neregistrovaniSpoluautori) }}</div>
+{#                            <div class="col-md-6">{{ form_row(filterForm.neregistrovaniSpoluautori) }}</div>#}
 
 
-                            <div class="col-md-6">{{ form_row(filterForm.tematickeZamereniSlovne) }}</div>
+{#                            <div class="col-md-6">{{ form_row(filterForm.tematickeZamereniSlovne) }}</div>#}
 
 
-                            <div class="col-md-6">{{ form_row(filterForm.tematickeZamereni) }}</div>
+{#                            <div class="col-md-6">{{ form_row(filterForm.tematickeZamereni) }}</div>#}
 
 
-                            <div class="col-md-6">{{ form_row(filterForm.nabidnoutZnovuOdmitnutyClanek) }}</div>
+{#                            <div class="col-md-6">{{ form_row(filterForm.nabidnoutZnovuOdmitnutyClanek) }}</div>#}
 
 
-                            <div class="col-md-6">{{ form_row(filterForm.uzaverkaCislaCasopisu) }}</div>
+{#                            <div class="col-md-6">{{ form_row(filterForm.uzaverkaCislaCasopisu) }}</div>#}
 
-                            <div class="col-md-6">
-                                {{ form_rest(filterForm) }}
-                            </div>
+{#                            <div class="col-md-6">#}
+{#                                {{ form_rest(filterForm) }}#}
+{#                            </div>#}
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <button type="submit" class="btn btn-warning" name="filter_action" value="filter">
@@ -164,10 +164,10 @@
             <div class="col-md-3">
 
                 <a class="btn btn-primary h3 pull-right" href="{{ path('clanek_new') }}" style="margin-bottom:10px">
-                    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> New
+                    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Nový článek
                 </a>
                 <a class="btn dropdown-toggle pull-right h3" data-toggle="collapse" data-target="#filters">
-                    Filter
+                    Filtrování
                     <span class="caret"></span>
                 </a>
             </div>
@@ -211,32 +211,32 @@
                             <th>{{ macros.th_sortable('uzivatel',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'clanek', 'uživatel') }}</th>
                             <th>{{ macros.th_sortable('jmenoClanku',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'clanek', 'jméno článku') }}</th>
                             <th>{{ macros.th_sortable('cestaKsouboru',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'clanek', 'cesta k souboru') }}</th>
-                            <th>{{ macros.th_sortable('aktivniClanek',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'clanek', 'aktivní článek') }}</th>
-                            <th>{{ macros.th_sortable('clanekZobrazenRedakci',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'clanek', 'článek zobrazen redakci') }}</th>
-                            <th>{{ macros.th_sortable('cekaNaStanoveniRecenzentu',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'clanek', 'čeká na stanovení recenzentů') }}</th>
-                            <th>{{ macros.th_sortable('jsouStanoveniRecenzenti',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'clanek', 'jsou stanoveni recenzenti') }}</th>
-                            <th>{{ macros.th_sortable('probihaRecenzniRizeni',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'clanek', 'probíhá recenzní řízení') }}</th>
-                            <th>{{ macros.th_sortable('recenzniRizeniByloDokonceno',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'clanek', 'recenzní řízení bylo dokončeno') }}</th>
-                            <th>{{ macros.th_sortable('recenzniRizeniByloZruseno',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'clanek', 'recenzní řízení bylo zrušeno') }}</th>
-                            <th>{{ macros.th_sortable('novePodanaRevize',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'clanek', 'nově podaná revize') }}</th>
-                            <th>{{ macros.th_sortable('clanekPrijat',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'clanek', 'článek přijat') }}</th>
-                            <th>{{ macros.th_sortable('clanekPrijatSVyhradami',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'clanek', 'článek přijat s výhradami') }}</th>
-                            <th>{{ macros.th_sortable('clanekPrijatVyzadujeFormalniDoplneni',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'clanek', 'článek přijat, vyžaduje formalní doplnění') }}</th>
-                            <th>{{ macros.th_sortable('clanekZamitnutNeobstalVRecenznimRizeni',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'clanek', 'článek zamítnut, neobstál v recenzním řízení') }}</th>
-                            <th>{{ macros.th_sortable('clanekZamitnutNesplnujeSablonu',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'clanek', 'článek zamítnut, nesplňuje šablonu') }}</th>
-                            <th>{{ macros.th_sortable('clanekZamitnutTematickyNevhodny',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'clanek', 'článek zamítnut, tematicky nevhodný') }}</th>
-                            <th>{{ macros.th_sortable('cekaSeNaAutorovuRevizi',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'clanek', 'čeká se na autorovu revizi') }}</th>
-                            <th>{{ macros.th_sortable('nutnostPredatNovouReviziZpetRecenzentum',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'clanek', 'nutnost předat novou revizi zpět recenzentům') }}</th>
-                            <th>{{ macros.th_sortable('pozadavekNaNahrazeniRevizeAutorem',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'clanek', 'požadavek na nahrazení revize autorem') }}</th>
-                            <th>{{ macros.th_sortable('lzePodatNovouRevizi',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'clanek', 'lze podat novou revizi') }}</th>
-                            <th>{{ macros.th_sortable('nejednoznacnostRecenznihoRizeni',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'clanek', 'nejednoznačnost recenzního řízení') }}</th>
-                            <th>{{ macros.th_sortable('clanekVydan',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'clanek', 'článek vydan') }}</th>
-                            <th>{{ macros.th_sortable('cisloCasopisu',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'clanek', 'číslo časopisu') }}</th>
+{#                            <th>{{ macros.th_sortable('aktivniClanek',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'clanek', 'aktivní článek') }}</th>#}
+{#                            <th>{{ macros.th_sortable('clanekZobrazenRedakci',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'clanek', 'článek zobrazen redakci') }}</th>#}
+{#                            <th>{{ macros.th_sortable('cekaNaStanoveniRecenzentu',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'clanek', 'čeká na stanovení recenzentů') }}</th>#}
+{#                            <th>{{ macros.th_sortable('jsouStanoveniRecenzenti',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'clanek', 'jsou stanoveni recenzenti') }}</th>#}
+{#                            <th>{{ macros.th_sortable('probihaRecenzniRizeni',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'clanek', 'probíhá recenzní řízení') }}</th>#}
+{#                            <th>{{ macros.th_sortable('recenzniRizeniByloDokonceno',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'clanek', 'recenzní řízení bylo dokončeno') }}</th>#}
+{#                            <th>{{ macros.th_sortable('recenzniRizeniByloZruseno',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'clanek', 'recenzní řízení bylo zrušeno') }}</th>#}
+{#                            <th>{{ macros.th_sortable('novePodanaRevize',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'clanek', 'nově podaná revize') }}</th>#}
+{#                            <th>{{ macros.th_sortable('clanekPrijat',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'clanek', 'článek přijat') }}</th>#}
+{#                            <th>{{ macros.th_sortable('clanekPrijatSVyhradami',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'clanek', 'článek přijat s výhradami') }}</th>#}
+{#                            <th>{{ macros.th_sortable('clanekPrijatVyzadujeFormalniDoplneni',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'clanek', 'článek přijat, vyžaduje formalní doplnění') }}</th>#}
+{#                            <th>{{ macros.th_sortable('clanekZamitnutNeobstalVRecenznimRizeni',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'clanek', 'článek zamítnut, neobstál v recenzním řízení') }}</th>#}
+{#                            <th>{{ macros.th_sortable('clanekZamitnutNesplnujeSablonu',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'clanek', 'článek zamítnut, nesplňuje šablonu') }}</th>#}
+{#                            <th>{{ macros.th_sortable('clanekZamitnutTematickyNevhodny',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'clanek', 'článek zamítnut, tematicky nevhodný') }}</th>#}
+{#                            <th>{{ macros.th_sortable('cekaSeNaAutorovuRevizi',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'clanek', 'čeká se na autorovu revizi') }}</th>#}
+{#                            <th>{{ macros.th_sortable('nutnostPredatNovouReviziZpetRecenzentum',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'clanek', 'nutnost předat novou revizi zpět recenzentům') }}</th>#}
+{#                            <th>{{ macros.th_sortable('pozadavekNaNahrazeniRevizeAutorem',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'clanek', 'požadavek na nahrazení revize autorem') }}</th>#}
+{#                            <th>{{ macros.th_sortable('lzePodatNovouRevizi',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'clanek', 'lze podat novou revizi') }}</th>#}
+{#                            <th>{{ macros.th_sortable('nejednoznacnostRecenznihoRizeni',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'clanek', 'nejednoznačnost recenzního řízení') }}</th>#}
+{#                            <th>{{ macros.th_sortable('clanekVydan',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'clanek', 'článek vydan') }}</th>#}
+{#                            <th>{{ macros.th_sortable('cisloCasopisu',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'clanek', 'číslo časopisu') }}</th>#}
                             <th>{{ macros.th_sortable('neregistrovaniSpoluautori',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'clanek', 'neregistrovaní spoluautoři') }}</th>
-                            <th>{{ macros.th_sortable('tematickeZamereniSlovne',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'clanek', 'tématické zaměření slovně') }}</th>
-                            <th>{{ macros.th_sortable('tematickeZamereni',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'clanek', 'tématické zaměření') }}</th>
-                            <th>{{ macros.th_sortable('nabidnoutZnovuOdmitnutyClanek',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'clanek', 'nabídnout znovu odmítnutý článek') }}</th>
-                            <th>{{ macros.th_sortable('uzaverkaCislaCasopisu',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'clanek', 'uzávěrka čísla časopisu') }}</th>
+{#                            <th>{{ macros.th_sortable('tematickeZamereniSlovne',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'clanek', 'tématické zaměření slovně') }}</th>#}
+{#                            <th>{{ macros.th_sortable('tematickeZamereni',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'clanek', 'tématické zaměření') }}</th>#}
+{#                            <th>{{ macros.th_sortable('nabidnoutZnovuOdmitnutyClanek',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'clanek', 'nabídnout znovu odmítnutý článek') }}</th>#}
+{#                            <th>{{ macros.th_sortable('uzaverkaCislaCasopisu',app.request.get('pcg_sort_col'), app.request.get('pcg_sort_order') , 'clanek', 'uzávěrka čísla časopisu') }}</th>#}
 
                             <th width="130px">Akce</th>
                         </tr>
@@ -249,33 +249,33 @@
                                 <td><a href="{{ path('clanek_edit', { 'id': clanek.id }) }}">{{ clanek.id }}</a></td>
                                 <td>{%- if clanek.uzivatel%}{{ clanek.uzivatel }}{% endif %}</td>
                                 <td>{%- if clanek.jmenoClanku%}{{ clanek.jmenoClanku }}{% endif %}</td>
-                                <td>{%- if clanek.cestaKsouboru%}{{ clanek.cestaKsouboru }}{% endif %}</td>
-                                <td>{%- if clanek.aktivniClanek %}Yes{% else %}No{% endif %}</td>
-                                <td>{%- if clanek.clanekZobrazenRedakci %}Yes{% else %}No{% endif %}</td>
-                                <td>{%- if clanek.cekaNaStanoveniRecenzentu %}Yes{% else %}No{% endif %}</td>
-                                <td>{%- if clanek.jsouStanoveniRecenzenti %}Yes{% else %}No{% endif %}</td>
-                                <td>{%- if clanek.probihaRecenzniRizeni %}Yes{% else %}No{% endif %}</td>
-                                <td>{%- if clanek.recenzniRizeniByloDokonceno %}Yes{% else %}No{% endif %}</td>
-                                <td>{%- if clanek.recenzniRizeniByloZruseno %}Yes{% else %}No{% endif %}</td>
-                                <td>{%- if clanek.novePodanaRevize %}Yes{% else %}No{% endif %}</td>
-                                <td>{%- if clanek.clanekPrijat %}Yes{% else %}No{% endif %}</td>
-                                <td>{%- if clanek.clanekPrijatSVyhradami %}Yes{% else %}No{% endif %}</td>
-                                <td>{%- if clanek.clanekPrijatVyzadujeFormalniDoplneni %}Yes{% else %}No{% endif %}</td>
-                                <td>{%- if clanek.clanekZamitnutNeobstalVRecenznimRizeni %}Yes{% else %}No{% endif %}</td>
-                                <td>{%- if clanek.clanekZamitnutNesplnujeSablonu %}Yes{% else %}No{% endif %}</td>
-                                <td>{%- if clanek.clanekZamitnutTematickyNevhodny %}Yes{% else %}No{% endif %}</td>
-                                <td>{%- if clanek.cekaSeNaAutorovuRevizi %}Yes{% else %}No{% endif %}</td>
-                                <td>{%- if clanek.nutnostPredatNovouReviziZpetRecenzentum %}Yes{% else %}No{% endif %}</td>
-                                <td>{%- if clanek.pozadavekNaNahrazeniRevizeAutorem %}Yes{% else %}No{% endif %}</td>
-                                <td>{%- if clanek.lzePodatNovouRevizi %}Yes{% else %}No{% endif %}</td>
-                                <td>{%- if clanek.nejednoznacnostRecenznihoRizeni %}Yes{% else %}No{% endif %}</td>
-                                <td>{%- if clanek.clanekVydan %}Yes{% else %}No{% endif %}</td>
-                                <td>{{ clanek.cisloCasopisu }}</td>
+                                <td>{%- if clanek.cestaKsouboru%}<a href={{ path('download_file', {jmeno: clanek.cestaKsouboru}) }}>{{ clanek.cestaKsouboru }}</a>{% endif %}</td>
+{#                                <td>{%- if clanek.aktivniClanek %}Yes{% else %}No{% endif %}</td>#}
+{#                                <td>{%- if clanek.clanekZobrazenRedakci %}Yes{% else %}No{% endif %}</td>#}
+{#                                <td>{%- if clanek.cekaNaStanoveniRecenzentu %}Yes{% else %}No{% endif %}</td>#}
+{#                                <td>{%- if clanek.jsouStanoveniRecenzenti %}Yes{% else %}No{% endif %}</td>#}
+{#                                <td>{%- if clanek.probihaRecenzniRizeni %}Yes{% else %}No{% endif %}</td>#}
+{#                                <td>{%- if clanek.recenzniRizeniByloDokonceno %}Yes{% else %}No{% endif %}</td>#}
+{#                                <td>{%- if clanek.recenzniRizeniByloZruseno %}Yes{% else %}No{% endif %}</td>#}
+{#                                <td>{%- if clanek.novePodanaRevize %}Yes{% else %}No{% endif %}</td>#}
+{#                                <td>{%- if clanek.clanekPrijat %}Yes{% else %}No{% endif %}</td>#}
+{#                                <td>{%- if clanek.clanekPrijatSVyhradami %}Yes{% else %}No{% endif %}</td>#}
+{#                                <td>{%- if clanek.clanekPrijatVyzadujeFormalniDoplneni %}Yes{% else %}No{% endif %}</td>#}
+{#                                <td>{%- if clanek.clanekZamitnutNeobstalVRecenznimRizeni %}Yes{% else %}No{% endif %}</td>#}
+{#                                <td>{%- if clanek.clanekZamitnutNesplnujeSablonu %}Yes{% else %}No{% endif %}</td>#}
+{#                                <td>{%- if clanek.clanekZamitnutTematickyNevhodny %}Yes{% else %}No{% endif %}</td>#}
+{#                                <td>{%- if clanek.cekaSeNaAutorovuRevizi %}Yes{% else %}No{% endif %}</td>#}
+{#                                <td>{%- if clanek.nutnostPredatNovouReviziZpetRecenzentum %}Yes{% else %}No{% endif %}</td>#}
+{#                                <td>{%- if clanek.pozadavekNaNahrazeniRevizeAutorem %}Yes{% else %}No{% endif %}</td>#}
+{#                                <td>{%- if clanek.lzePodatNovouRevizi %}Yes{% else %}No{% endif %}</td>#}
+{#                                <td>{%- if clanek.nejednoznacnostRecenznihoRizeni %}Yes{% else %}No{% endif %}</td>#}
+{#                                <td>{%- if clanek.clanekVydan %}Yes{% else %}No{% endif %}</td>#}
+{#                                <td>{{ clanek.cisloCasopisu }}</td>#}
                                 <td>{{ clanek.neregistrovaniSpoluautori }}</td>
-                                <td>{{ clanek.tematickeZamereniSlovne }}</td>
-                                <td>{{ clanek.tematickeZamereni }}</td>
-                                <td>{%- if clanek.nabidnoutZnovuOdmitnutyClanek %}{{ clanek.nabidnoutZnovuOdmitnutyClanek|date('Y-m-d') }}{% endif %}</td>
-                                <td>{%- if clanek.uzaverkaCislaCasopisu %}{{ clanek.uzaverkaCislaCasopisu|date('Y-m-d') }}{% endif %}</td>
+{#                                <td>{{ clanek.tematickeZamereniSlovne }}</td>#}
+{#                                <td>{{ clanek.tematickeZamereni }}</td>#}
+{#                                <td>{%- if clanek.nabidnoutZnovuOdmitnutyClanek %}{{ clanek.nabidnoutZnovuOdmitnutyClanek|date('Y-m-d') }}{% endif %}</td>#}
+{#                                <td>{%- if clanek.uzaverkaCislaCasopisu %}{{ clanek.uzaverkaCislaCasopisu|date('Y-m-d') }}{% endif %}</td>#}
 
                                 <td class="actions">
                                     <a onclick="return confirm('Are you sure!');" title="Delete"
@@ -308,11 +308,11 @@
         <div class="row">
             <div class="col-md-4 pull-left">
                 <div class="pagination form-inline ">
-                    <select class="form-control" name="bulk_action">
-                        <option value="delete">DELETE</option>
-                    </select>
-                    <input type="submit" id='bulkSubmitBtn' onclick="return confirm('Are you sure?')" form="bulk_form"
-                           class="form-control btn btn-danger btn-sm" disabled>
+{#                    <select class="form-control" name="bulk_action">#}
+{#                        <option value="delete">DELETE</option>#}
+{#                    </select>#}
+{#                    <input type="submit" id='bulkSubmitBtn' onclick="return confirm('Are you sure?')" form="bulk_form"#}
+{#                           class="form-control btn btn-danger btn-sm" disabled>#}
                 </div>
             </div>
 
